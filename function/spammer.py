@@ -20,7 +20,7 @@ async def send_message(session, channelid, msg, token):
 
 async def spammer(msg, count):
     async with aiohttp.ClientSession() as session:
-        with open("data/account.txt") as f:
+        with open("data/tokens.txt") as f:
             tokens = f.read().splitlines()
         with open("data/channels.txt") as f:
             channels = f.read().splitlines()
