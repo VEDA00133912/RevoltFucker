@@ -2,7 +2,7 @@ import aiohttp
 
 async def joinah(inviteCode):
     async with aiohttp.ClientSession() as session:
-        with open("data/account.txt") as f:
+        with open("data/tokens.txt") as f:
             tokens = f.read().splitlines()
         
         for token in tokens:
