@@ -1,8 +1,14 @@
 import asyncio
+from function.online import set_all_online
 from function.joiner import joinah
 from function.spammer import spammer
 
 async def main():
+    status_text = input("Enter status text (default: Hello, World!) [>] ") or "Hello, World"
+    presence = input("Enter presence (Online, Idle, Busy, Focus) (default: Online) [>] ") or "Online"
+
+    await set_all_online(status_text, presence)
+
     choice = input("1) Joiner\n2) Spammer\nSelect Choice [>] ")
 
     if choice == '1':
